@@ -1,0 +1,19 @@
+spring:
+  datasource:
+ #   url: jdbc:h2:tcp://localhost/~/
+    url: jdbc:h2:mem:test # 테스트시 개발 / 별도 DB 사용없이 메모리모드로 하는 방법
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+ #       show_sql: true
+        format_sql: true
+# 그런데 스프링에서는 기본적으로 메모리모드를 지원하기 때문에 위의 모든 설정이 없어도 테스트 가능
+
+  logging.level:
+    org.hibernate.SQL: debug
